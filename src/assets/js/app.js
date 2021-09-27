@@ -15,3 +15,19 @@ require('foundation-sites');
 
 
 $(document).foundation();
+
+var navcolor = document.getElementById('responsive-menu');
+function navBg() { 
+    var depth = window.pageYOffset;
+
+    if (depth < 2) {
+        navcolor.classList.add('nav-transparent');
+        navcolor.classList.remove('nav-colored');
+    } else {
+        navcolor.classList.remove('nav-transparent');
+        navcolor.classList.add('nav-colored');
+    }
+    requestAnimationFrame(navBg);
+}
+requestAnimationFrame(navBg); 
+// Browser optimized way to call function;
