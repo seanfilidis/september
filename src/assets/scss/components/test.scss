@@ -1,6 +1,13 @@
 body, html {
     height: 100%;
 }
+h1, h2, h3, h4 {
+    font-weight: 800;
+}
+
+section {
+    margin-bottom: 80px;
+}
 .hero {
     width: 100%;
     height: 100%;
@@ -9,9 +16,8 @@ body, html {
     z-index: -1;
     display: flex;
     text-align: center;
-    div, h1, h2 {
+    div {
         color: white;
-        font-weight: 800;
     }
 }
 .navigation {
@@ -30,4 +36,11 @@ body, html {
     background-color: rgb(228, 228, 228);
     border-bottom: 1px solid #d2d2d2;
     transition: background-color 300ms linear;
+}
+.text-image {
+    margin-bottom: 100px;
+}
+.features {
+    background-color: $light-gray;
+    padding: 30px 20px;
 }
