@@ -17,17 +17,27 @@ require('foundation-sites');
 $(document).foundation();
 
 var navcolor = document.getElementById('responsive-menu');
+var blacklogo = document.getElementById('blacklogo');
+var whitelogo = document.getElementById('whitelogo');
 function navBg() { 
     var depth = window.pageYOffset;
 
     if (depth < 2) {
-        navcolor.classList.add('nav-transparent');
-        navcolor.classList.remove('nav-colored');
+        navcolor.classList.add('nav-empty');
+        navcolor.classList.remove('nav-full');
+        blacklogo.classList.add('hide');
+        whitelogo.classList.remove('hide');
     } else {
-        navcolor.classList.remove('nav-transparent');
-        navcolor.classList.add('nav-colored');
+        navcolor.classList.remove('nav-empty');
+        navcolor.classList.add('nav-full');
+        blacklogo.classList.remove('hide');
+        whitelogo.classList.add('hide');
     }
     requestAnimationFrame(navBg);
 }
 requestAnimationFrame(navBg); 
-// Browser optimized way to call function;
+// Browser optimized way to call function; 
+
+document.getElementById('mobtoggle').addEventListener('click', event => {
+    document.getElementById('mobtoggle').classList.toggle('is-active');
+});
